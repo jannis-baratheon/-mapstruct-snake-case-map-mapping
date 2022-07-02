@@ -1,0 +1,25 @@
+plugins {
+    id 'java-library'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(18)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.mapstruct:mapstruct:1.5.2.Final"
+    annotationProcessor "org.mapstruct:mapstruct-processor:1.5.2.Final"
+
+    testImplementation 'com.google.guava:guava:31.1-jre'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+}
